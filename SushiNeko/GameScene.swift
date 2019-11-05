@@ -20,6 +20,7 @@ class GameScene: SKScene {
         
         /* Connect game objects */
         sushiBasePiece = (childNode(withName: "sushiBasePiece") as! SushiPiece)
+        character = (childNode(withName: "character") as! Character)
         
         /* Setup chopstick connections */
         sushiBasePiece.connectChopsticks()
@@ -27,7 +28,7 @@ class GameScene: SKScene {
     
     /* Game objects */
     var sushiBasePiece: SushiPiece!
-    
+    var character: Character!
     
 }
 
