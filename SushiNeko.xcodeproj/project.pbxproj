@@ -18,6 +18,7 @@
 		E0CC6E65237116440009C672 /* sfx_swipe.caf in Resources */ = {isa = PBXBuildFile; fileRef = E0CC6E64237116440009C672 /* sfx_swipe.caf */; };
 		E0CC6E67237116700009C672 /* assets.atlas in Resources */ = {isa = PBXBuildFile; fileRef = E0CC6E66237116700009C672 /* assets.atlas */; };
 		E0CC6E69237117790009C672 /* MSButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC6E68237117790009C672 /* MSButtonNode.swift */; };
+		E0CC6E6B2371EF680009C672 /* SushiPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC6E6A2371EF680009C672 /* SushiPiece.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		E0CC6E64237116440009C672 /* sfx_swipe.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_swipe.caf; sourceTree = "<group>"; };
 		E0CC6E66237116700009C672 /* assets.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = assets.atlas; sourceTree = "<group>"; };
 		E0CC6E68237117790009C672 /* MSButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSButtonNode.swift; sourceTree = "<group>"; };
+		E0CC6E6A2371EF680009C672 /* SushiPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SushiPiece.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		E0CC6E4A2371146A0009C672 /* SushiNeko */ = {
 			isa = PBXGroup;
 			children = (
+				E0CC6E6A2371EF680009C672 /* SushiPiece.swift */,
 				E0CC6E63237116440009C672 /* SFX */,
 				E0CC6E4B2371146A0009C672 /* AppDelegate.swift */,
 				E0CC6E4D2371146A0009C672 /* GameScene.sks */,
@@ -168,6 +171,7 @@
 				E0CC6E522371146A0009C672 /* GameScene.swift in Sources */,
 				E0CC6E542371146A0009C672 /* GameViewController.swift in Sources */,
 				E0CC6E4C2371146A0009C672 /* AppDelegate.swift in Sources */,
+				E0CC6E6B2371EF680009C672 /* SushiPiece.swift in Sources */,
 				E0CC6E69237117790009C672 /* MSButtonNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
