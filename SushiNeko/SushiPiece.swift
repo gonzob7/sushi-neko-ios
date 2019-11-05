@@ -25,8 +25,10 @@ class SushiPiece: SKSpriteNode {
     }
     
     func connectChopsticks(){
-        rightChopstick = childNode(withName: "rightChopstick") as! SKSpriteNode
-        leftChopstick = childNode(withName: "leftChopstick") as! SKSpriteNode
+        rightChopstick = (childNode(withName: "rightChopstick") as! SKSpriteNode)
+        leftChopstick = (childNode(withName: "leftChopstick") as! SKSpriteNode)
+        /* Set the default side */
+        side = .none
     }
 
     var side: Side = .none{
