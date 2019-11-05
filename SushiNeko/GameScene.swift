@@ -14,5 +14,18 @@ enum Side {
 }
 
 class GameScene: SKScene {
-
+    
+    override func didMove(to view: SKView) {
+        super.didMove(to: view)
+        
+        /* Connect game objects */
+        sushiBasePiece = (childNode(withName: "sushiBasePiece") as! SushiPiece)
+    }
+    
+    /* Game objects */
+    var sushiBasePiece: SushiPiece!
+    
+    
 }
+
+
