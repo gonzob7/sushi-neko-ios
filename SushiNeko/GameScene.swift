@@ -24,6 +24,11 @@ class GameScene: SKScene {
         
         /* Setup chopstick connections */
         sushiBasePiece.connectChopsticks()
+        
+        /* Manually stack the start of the tower */
+        addTowerPiece(side: .none)
+        addTowerPiece(side: .right)
+
     }
     
     /* Game objects */
@@ -55,6 +60,9 @@ class GameScene: SKScene {
         
         /* Set Side */
         newPiece.side = side
+        
+        /* Add sushi to scene */
+        addChild(newPiece)
         
         /* Add sushi piece to sushi tower */
         sushiTower.append(newPiece)
