@@ -68,6 +68,36 @@ class GameScene: SKScene {
         sushiTower.append(newPiece)
     }
     
+    func addRandomPieces(total: Int) {
+      /* Add random sushi pieces to the sushi tower */
+
+      for _ in 1...total {
+
+          /* Need to access last piece properties */
+          let lastPiece = sushiTower.last!
+
+          /* Need to ensure we don't create impossible sushi structures */
+          if lastPiece.side != .none {
+             addTowerPiece(side: .none)
+          } else {
+
+             /* Random Number Generator */
+             let rand = arc4random_uniform(100)
+
+             if rand < 45 {
+                /* 45% Chance of a left piece */
+                addTowerPiece(side: .left)
+             } else if rand < 90 {
+                /* 45% Chance of a right piece */
+                addTowerPiece(side: .right)
+             } else {
+                /* 10% Chance of an empty piece */
+                addTowerPiece(side: .none)
+             }
+          }
+      }
+    }
+    
 }
 
 
