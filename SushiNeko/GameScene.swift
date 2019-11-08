@@ -28,7 +28,25 @@ class GameScene: SKScene {
         /* Manually stack the start of the tower */
         addTowerPiece(side: .none)
         addTowerPiece(side: .right)
+        
+        /* Randomize tower to just outside of the screen */
+        addRandomPieces(total: 10)
 
+    }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        /* Called when a touch begins */
+        /* We only need a single touch here */
+        let touch = touches.first!
+        /* Get touch position in scene */
+        let location = touch.location(in: self)
+        /* Was touch on left/right hand side of screen? */
+        if location.x > size.width / 2 {
+            character.side = .right
+        } else {
+            character.side = .left
+        }
     }
     
     /* Game objects */
