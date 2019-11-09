@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E08910E7237680420062BB13 /* AnimationActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = E08910E6237680420062BB13 /* AnimationActions.sks */; };
 		E0CC6E4C2371146A0009C672 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC6E4B2371146A0009C672 /* AppDelegate.swift */; };
 		E0CC6E4E2371146A0009C672 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E0CC6E4D2371146A0009C672 /* GameScene.sks */; };
 		E0CC6E502371146A0009C672 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = E0CC6E4F2371146A0009C672 /* Actions.sks */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E08910E6237680420062BB13 /* AnimationActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AnimationActions.sks; sourceTree = "<group>"; };
 		E0CC6E482371146A0009C672 /* SushiNeko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SushiNeko.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0CC6E4B2371146A0009C672 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0CC6E4D2371146A0009C672 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 		E0CC6E4A2371146A0009C672 /* SushiNeko */ = {
 			isa = PBXGroup;
 			children = (
+				E08910E6237680420062BB13 /* AnimationActions.sks */,
 				E0CC6E6A2371EF680009C672 /* SushiPiece.swift */,
 				E0CC6E63237116440009C672 /* SFX */,
 				E0CC6E4B2371146A0009C672 /* AppDelegate.swift */,
@@ -158,6 +161,7 @@
 				E0CC6E65237116440009C672 /* sfx_swipe.caf in Resources */,
 				E0CC6E4E2371146A0009C672 /* GameScene.sks in Resources */,
 				E0CC6E67237116700009C672 /* assets.atlas in Resources */,
+				E08910E7237680420062BB13 /* AnimationActions.sks in Resources */,
 				E0CC6E592371146E0009C672 /* Assets.xcassets in Resources */,
 				E0CC6E5C2371146E0009C672 /* LaunchScreen.storyboard in Resources */,
 				E0CC6E502371146A0009C672 /* Actions.sks in Resources */,
