@@ -13,16 +13,35 @@ enum Side {
     case left, right, none
 }
 
-/* Tracking enum for game state */
 enum GameState {
     case title, ready, playing, gameOver
 }
 
-
 class GameScene: SKScene {
+    
+    
+    
+    /* Game management */
+    var state: GameState = .title
+    
+    
+    /* Game objects */
+    var sushiBasePiece: SushiPiece!
+    var character: Character!
+    var sushiTower: [SushiPiece] = []
+    var playButton: MSButtonNode!
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
+        
+        /* UI game objects */
+        playButton = childNode(withName: "playButton") as! MSButtonNode
+        
+        /* Setup play button selection handler */
+        playButton.selectedHandler = {
+            /* Start game */
+            self.state = .ready
+        }
         
         /* Connect game objects */
         sushiBasePiece = (childNode(withName: "sushiBasePiece") as! SushiPiece)
@@ -42,6 +61,12 @@ class GameScene: SKScene {
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        /* Game not ready to play */
+        if state == .gameOver || state == .title { return }
+        /* Game begins on first touch */
+        if state == .ready { state = .playing }
+        
         /* Called when a touch begins */
         /* We only need a single touch here */
         let touch = touches.first!
@@ -67,15 +92,7 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         moveTowerDown()
     }
-    
-    /* Game objects */
-    var sushiBasePiece: SushiPiece!
-    var character: Character!
-    var sushiTower: [SushiPiece] = []
-    
-    /* Game management */
-    var state: GameState = .title
-    
+
     func moveTowerDown() {
         var n: CGFloat = 0
         for piece in sushiTower {
