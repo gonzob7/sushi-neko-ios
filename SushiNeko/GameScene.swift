@@ -35,7 +35,7 @@ class GameScene: SKScene {
         super.didMove(to: view)
         
         /* UI game objects */
-        playButton = childNode(withName: "playButton") as! MSButtonNode
+        playButton = (childNode(withName: "playButton") as! MSButtonNode)
         
         /* Setup play button selection handler */
         playButton.selectedHandler = {
@@ -81,6 +81,13 @@ class GameScene: SKScene {
         
         /* Grab sushi piece on top of the base sushi piece, it will always be 'first' */
         if let firstPiece = sushiTower.first as SushiPiece? {
+            if character.side == firstPiece.side {
+
+                gameOver()
+
+                /* No need to continue as player is dead */
+                return
+            }
             /* Remove from sushi tower array */
             sushiTower.removeFirst()
             firstPiece.flip(character.side)
@@ -99,6 +106,43 @@ class GameScene: SKScene {
             let y = (n * 55) + 215
             piece.position.y -= (piece.position.y - y) * 0.5
             n += 1
+        }
+    }
+    
+    
+    func gameOver() {
+        /* Game over! */
+
+        state = .gameOver
+
+        /* Create turnRed SKAction */
+        let turnRed = SKAction.colorize(with: .red, colorBlendFactor: 1.0, duration: 0.50)
+
+        /* Turn all the sushi pieces red*/
+        sushiBasePiece.run(turnRed)
+        for sushiPiece in sushiTower {
+            sushiPiece.run(turnRed)
+        }
+
+        /* Make the player turn red */
+        character.run(turnRed)
+
+        /* Change play button selection handler */
+        playButton.selectedHandler = {
+
+            /* Grab reference to the SpriteKit view */
+            let skView = self.view as SKView?
+
+            /* Load Game scene */
+            guard let scene = GameScene(fileNamed: "GameScene") as GameScene? else {
+                return
+            }
+
+            /* Ensure correct aspect mode */
+            scene.scaleMode = .aspectFill
+
+            /* Restart GameScene */
+            skView?.presentScene(scene)
         }
     }
     
