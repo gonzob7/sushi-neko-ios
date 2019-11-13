@@ -31,6 +31,7 @@ class GameScene: SKScene {
     var sushiTower: [SushiPiece] = []
     var playButton: MSButtonNode!
     var healthBar: SKSpriteNode!
+    var scoreLabel: SKLabelNode!
 
     
     override func didMove(to view: SKView) {
@@ -49,6 +50,7 @@ class GameScene: SKScene {
         sushiBasePiece = (childNode(withName: "sushiBasePiece") as! SushiPiece)
         character = (childNode(withName: "character") as! Character)
         healthBar = (childNode(withName: "healthBar") as! SKSpriteNode)
+        scoreLabel = (childNode(withName: "scoreLabel") as! SKLabelNode)
 
         
         /* Setup chopstick connections */
@@ -101,6 +103,8 @@ class GameScene: SKScene {
         
         /* Increment Health */
         health += 0.1
+        /* Increment Score */
+        score += 1
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -231,6 +235,12 @@ class GameScene: SKScene {
         /* Scale health bar between 0.0 -> 1.0 e.g 0 -> 100% */
         healthBar.xScale = health
         
+      }
+    }
+    
+    var score: Int = 0 {
+      didSet {
+        scoreLabel.text = String(score)
       }
     }
     
