@@ -13,6 +13,12 @@ enum Side {
     case left, right, none
 }
 
+/* Tracking enum for game state */
+enum GameState {
+    case title, ready, playing, gameOver
+}
+
+
 class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
@@ -67,6 +73,8 @@ class GameScene: SKScene {
     var character: Character!
     var sushiTower: [SushiPiece] = []
     
+    /* Game management */
+    var state: GameState = .title
     
     func moveTowerDown() {
         var n: CGFloat = 0
